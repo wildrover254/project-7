@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-    BroswerRouter as Router,
+    BrowserRouter as Router,
     Switch,
     Route,
     Link
@@ -8,6 +8,7 @@ import {
 import Search from './Search';
 import Nav from './Nav';
 import PhotoContainer from './PhotoContainer';
+import NotFound from './NotFound';
 
 class App extends Component {
 
@@ -20,11 +21,12 @@ class App extends Component {
 
     render() {
         return (
-            <div>
-                <Search />
-                <Nav />
-                <PhotoContainer />
-            </div>
+            <Router>
+                <div>
+                    <Route path="/" component={Search} />
+                    <Route path="/not-found" component={NotFound} />
+                </div>
+            </Router>
         );
     }
 }
