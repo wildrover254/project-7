@@ -5,7 +5,8 @@ class PhotoContainer extends Component {
 
     render() {
         return (
-            <div>
+            <div className='photo-container'>
+                <h2>Results</h2>
                 <Photo />
             </div>
         )
