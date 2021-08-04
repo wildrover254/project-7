@@ -23,7 +23,9 @@ class App extends Component {
         return (
             <Router>
                 <div>
-                    <Route path="/" component={Search} />
+                    <Search />
+                    <Nav />
+                    <Route exact path="/" render={ () => <PhotoContainer />} />
                     <Route path="/not-found" component={NotFound} />
                 </div>
             </Router>
