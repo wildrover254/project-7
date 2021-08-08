@@ -5,7 +5,7 @@ const PhotoContainer = props => {
 
     const results = props.data;
     let photos = results.map (photos => 
-        <Photo url={`https://live.staticflickr.com/${results.server}/${results.id}_${results.secret}.jpg`}/>
+        <Photo url={`https://live.staticflickr.com/${photos.server}/${photos.id}_${photos.secret}.jpg`}/>
     );
     console.log(photos);
 
