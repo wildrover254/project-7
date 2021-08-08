@@ -7,7 +7,6 @@ const PhotoContainer = props => {
     let photos = results.map (photos => 
         <Photo url={`https://live.staticflickr.com/${photos.server}/${photos.id}_${photos.secret}.jpg`}/>
     );
-    console.log(photos);
 
     return (
         <div className='photo-container'>

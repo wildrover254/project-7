@@ -5,6 +5,7 @@ import {
     Switch,
     Route,
 } from 'react-router-dom'
+import apiKey from './config';
 import Search from './Search';
 import Nav from './Nav';
 import PhotoContainer from './PhotoContainer';
@@ -20,7 +21,7 @@ class App extends Component {
     }
 
     componentDidMount () {
-        axios.get('https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=264fd9075206431b3792f91469495d9e&tags=cats&per_page=24&format=json&nojsoncallback=1')
+        axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=cats&per_page=24&format=json&nojsoncallback=1`)
             .then(response => {
                 this.setState({
                     photos: response.data.photos.photo
