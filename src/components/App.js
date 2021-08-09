@@ -38,7 +38,10 @@ class App extends Component {
                 <div>
                     <Search />
                     <Nav />
-                    <Route exact path="/" render={ () => <PhotoContainer data={this.state.photos} />} />
+                    <Route exact path="/" render={ () => <PhotoContainer search='cats' />} />
+                    <Route path ="/cats" render={ () => <PhotoContainer search='cats' />} />
+                    <Route path ="/dogs" render={ () => <PhotoContainer search='dogs' />} />
+                    <Route path ="/computers" render={ () => <PhotoContainer search='computers' />} />
                     <Route path="/not-found" component={NotFound} />
                 </div>
             </Router>
