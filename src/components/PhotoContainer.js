@@ -9,8 +9,9 @@ class PhotoContainer extends Component{
         photos: []
     }
 
-    componentDidMount () {
-        axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${this.props.search}&per_page=24&format=json&nojsoncallback=1`)
+    componentDidMount() {
+        const tag = this.props.match.params.tag;
+        axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${tag}&per_page=24&format=json&nojsoncallback=1`)
             .then(response => {
                 this.setState({
                     photos: response.data.photos.photo
