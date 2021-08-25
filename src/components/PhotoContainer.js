@@ -12,26 +12,24 @@ class PhotoContainer extends Component{
         
     render() {
         const results = this.props.data;
-
+        let photos;
         if (results.length > 0) {
-            let photos = results.map (photos => 
+            photos = results.map (photos => 
                 <Photo url={`https://live.staticflickr.com/${photos.server}/${photos.id}_${photos.secret}.jpg`} key={photos.id} />
             );
-            return (
-                <div>
-                    <div className='photo-container'>
-                        <h2>Results</h2>
-                        <ul>
-                            {photos}
-                        </ul>
-                    </div>
-                </div>
-            )
         } else {
-            return (
-                <NotFound />
-            )
+            photos = <NotFound />
         }
+        return (
+            <div>
+                <div className='photo-container'>
+                    <h2>Results</h2>
+                    <ul>
+                        {photos}
+                    </ul>
+                </div>
+            </div>
+        )
     }
 }
 
