@@ -34,7 +34,6 @@ class App extends Component {
                 .then(response => {
                     this.setState({
                         fish: response.data.photos.photo,
-                        loading: false
                     });
                 })
                 .catch(error => {
